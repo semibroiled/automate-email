@@ -1,19 +1,17 @@
 import pandas as pd
 import smtplib
+import credentials
 
-smtpObj = smtplib.SMTP('mail.gmx.net', 587)
-
-smtpObj.ehlo()
-
-smtpObj.starttls()
-
-smtpObj.login('yyy', 'xxx')
 try:
-    smtpObj.sendmail('xxx', 'xxx', '''From: Sender <xxx>
-To: Receiver<xxx>
-Subject: So long 
+    smtpObj = smtplib.SMTP(credentials.my_smtp, credentials.my_port)
+    smtpObj.ehlo()
+    smtpObj.starttls()
+    smtpObj.login(credentials.my_mail, credentials.my_pass)
+    smtpObj.sendmail(credentials.my_mail, 'amitavmostafa137@gmail.com', f'''From: {credentials.my_name}<{credentials.my_mail}>
+    To: Receiver<amitavmostafa137@gmail.com>
+    Subject: Test 1 
 
-Dear me, wtf. Sincerely, You''')
+    Dear me, wtf. Sincerely, You''')
+    smtpObj.quit()
 except smtplib.SMTPDataError as de:
     print(de)
-smtpObj.quit()
