@@ -21,7 +21,9 @@ if subject:
     Name = 'nachname receiver '
     Art = 'Hiwi/Werkstudent/Praktikant'
 
-message = f\'\'\'Sehr geehrter {Anrede} {Name},\nhiermit möchte ich mich für die {Art} Stelle bewerben. Sie finden die relevante Unterlagen im Anhang beigefügt.\nMit freundlichen Grüßen\nAC Mostafa  \'\'\' '''
+message = f\'\'\'Sehr geehrter {Anrede} {Name},\n\nhiermit möchte ich mich für die {Art} Stelle bewerben. Sie finden die relevante Unterlagen im Anhang beigefügt. Vielen Dank im Voraus\n\nMit freundlichen Grüßen\nAC Mostafa  \'\'\' '''
+
+#! ONLY WORKS IF YOU HAVE NO TWO FACTOR AUTHENTICATION!!!
 
 try:
     message = credentials.message
