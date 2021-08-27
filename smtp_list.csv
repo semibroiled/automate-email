@@ -1,0 +1,4 @@
+,Posteingang (IMAP),Postausgang (SMTP)
+Server,imap.gmx.net,mail.gmx.net
+Port,993,587
+Verschlüsselung,SSL oder Verschlüsselung,STARTTLS TLS oder Verschlüsselung
