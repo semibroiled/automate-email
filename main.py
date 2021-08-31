@@ -2,7 +2,7 @@
 import pandas as pd
 import smtplib
 from email.mime.text import MIMEText
-#from email.MIMEMultipart import MIMEMultipart
+from email.mime.multipart import MIMEMultipart
 import credentials
 
 '''
