@@ -45,12 +45,15 @@ for filename in files:
     if 'smtp' in filename:
         files.pop(files.index(filename))
 #print(files) 
+
 #Read CSV file
 sheet_info = pd.read_csv(files[0]) #hardcoding filename for now out of test necessity. later add in user input to define filename
 
-
+#Iterate through datarows
 for i in range(len(sheet_info)):
+    #Check if email to be sent
     if 'yes' in sheet_info.loc[i,'send'].strip().lower():
+        #Making Message Body
         try:
             print('Making Message Body...')
             #Initialize Message Body
@@ -81,10 +84,13 @@ for i in range(len(sheet_info)):
             msg['From'] = credentials.my_mail
             msg['To'] = sheet_info.loc[i,'email'].strip()
             
-            print(msg)
+            #print(msg)
         except ValueError as ve:
             print(ve)
         
+        #Adding Binary Attachments in the form of .pdf, .docx, and more
+
+        #Connecting to Mail Server and sending Email
         try:
             #Connect to SMTP i.e. GMX Server
             print('Starting Process...')
