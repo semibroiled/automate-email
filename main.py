@@ -77,7 +77,7 @@ for i in range(len(sheet_info)):
             print(message)   
             
             msg = MIMEText(message)
-            msg['Subject'] = sheet_info.loc[i,'subject'].strip()
+            msg['Subject'] = f"Bewerbung {Art}: {sheet_info.loc[i,'subject'].strip()}"
             msg['From'] = credentials.my_mail
             msg['To'] = sheet_info.loc[i,'email'].strip()
             
